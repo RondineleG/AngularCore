@@ -37,6 +37,22 @@ namespace MeusFilme.API.Extensions
             return services;
         }
 
-      
+        public static IServiceCollection AdicionarDbContext(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            return services;
+        }
+
+        public static IServiceCollection AdicionarIdentityConfig(this IServiceCollection services)
+        {
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
+
+            return services;
+        }
     }
 }
