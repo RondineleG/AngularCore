@@ -127,6 +127,29 @@ namespace MeusFilme.API.Extensions
             return services;
         }
 
+        /* Application Builder */
 
+        public static IApplicationBuilder UtilizarApiConfig(this IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseCors();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
+            return app;
+        }
     }
 }
