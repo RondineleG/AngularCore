@@ -151,5 +151,18 @@ namespace MeusFilme.API.Extensions
 
             return app;
         }
+
+        public static IApplicationBuilder UtilizarSwaggerConfig(this IApplicationBuilder app)
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+            });
+
+            return app;
+        }
+
+
     }
 }
