@@ -137,9 +137,7 @@ namespace MeusFilme.API.Extensions
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseCors();
@@ -148,7 +146,6 @@ namespace MeusFilme.API.Extensions
             {
                 endpoints.MapControllers();
             });
-
             return app;
         }
 
@@ -159,7 +156,6 @@ namespace MeusFilme.API.Extensions
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
-
             return app;
         }
 

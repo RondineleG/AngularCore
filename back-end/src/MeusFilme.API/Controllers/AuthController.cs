@@ -74,7 +74,6 @@ namespace MeusFilme.API.Controllers
                     data = token
                 });
             }
-
             return BadRequest("Usuário ou senha inválidos");
         }
 
@@ -100,7 +99,6 @@ namespace MeusFilme.API.Controllers
                 Expires = DateTime.UtcNow.AddHours(_appSettings.ExpiracaoHoras),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
-
             return tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
         }
     }

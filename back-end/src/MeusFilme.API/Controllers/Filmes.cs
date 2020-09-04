@@ -32,7 +32,6 @@ namespace MeusFilme.API.Controllers
             {
                 var user = _accessor.HttpContext.User.FindFirst(ClaimTypes.Email);
             }
-
             return await _context.Filme.OrderBy(f=>f.AnoLancamento).ToListAsync();
         }
     }

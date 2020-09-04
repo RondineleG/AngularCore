@@ -10,7 +10,6 @@ namespace MeusFilme.API.Data
             : base(options)
         {
         }
-
         public DbSet<Filme> Filme { get; set; }
     }
 }

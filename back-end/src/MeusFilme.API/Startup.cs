@@ -10,7 +10,10 @@ namespace MeusFilme.API
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration) { Configuration = configuration; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -24,7 +27,7 @@ namespace MeusFilme.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app
+               app
                 .UtilizarApiConfig(env)
                 .UtilizarSwaggerConfig();
         }

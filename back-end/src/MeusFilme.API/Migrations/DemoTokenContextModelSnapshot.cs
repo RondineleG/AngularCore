@@ -18,6 +18,7 @@ namespace MeusFilme.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+
             modelBuilder.Entity("MeusFilme.API.Models.Filme", b =>
                 {
                     b.Property<Guid>("Id")
